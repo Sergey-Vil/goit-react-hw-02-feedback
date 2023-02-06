@@ -41,7 +41,7 @@ span {
 }
 .desc__statistics {
   display: flex;
-  margin-left: 400px;
+  margin: auto;
   flex-direction: column;
   align-items: flex-start;
 }
