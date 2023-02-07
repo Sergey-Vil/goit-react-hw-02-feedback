@@ -1,0 +1,21 @@
+/* p {
+  margin: 10px 0;
+} */
+.desc {
+  font-weight: 600;
+}
+.desc__statistics {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  width: 300px;
+  align-items: flex-start;
+}
+.data {
+  margin: 5px;
+  font-size: 24px;
+}
+.statistic_data {
+  text-align: center;
+  font-size: 24px;
+}
