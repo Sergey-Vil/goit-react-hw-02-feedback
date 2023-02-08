@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import css from './statistics.module.css';
 
 function Statistics({ good, neutral, bad, total, positivePercentage }) {
+  console.log(good, neutral, bad, total, positivePercentage);
   return (
     <>
       {total ? (
@@ -18,16 +20,10 @@ function Statistics({ good, neutral, bad, total, positivePercentage }) {
           <p className={css.data}>
             <span className={css.desc}>Total:</span> {total}
           </p>
-          {positivePercentage ? (
-            <p className={css.data}>
-              <span className={css.desc}>PositiveFeedback:</span>{' '}
-              {positivePercentage}%
-            </p>
-          ) : (
-            <p className={css.data}>
-              <span className={css.desc}>PositiveFeedback:</span> 0 %
-            </p>
-          )}
+          <p className={css.data}>
+            <span className={css.desc}>PositiveFeedback:</span>{' '}
+            {positivePercentage}%
+          </p>
         </div>
       ) : (
         <p className={css.statistic_data}>There is no feedback</p>
@@ -35,5 +31,13 @@ function Statistics({ good, neutral, bad, total, positivePercentage }) {
     </>
   );
 }
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};
 
 export default Statistics;

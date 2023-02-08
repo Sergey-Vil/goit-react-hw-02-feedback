@@ -1,10 +1,6 @@
-// import { Feedback } from './Feedback/Feedback';
-
 import { Component } from 'react';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
-
-// import css from './feedback.module.css';
 import Section from './Section/Section';
 
 export class App extends Component {
@@ -19,11 +15,15 @@ export class App extends Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    return Math.round(
+    const percent = Math.round(
       (this.state.good /
         (this.state.bad + this.state.neutral + this.state.good)) *
         100
     );
+    if (percent) {
+      return percent;
+    }
+    return 0;
   };
 
   hendleVoteIncrement = e => {
@@ -57,20 +57,3 @@ export class App extends Component {
     );
   }
 }
-
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         // alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101',
-//       }}
-//     >
-//       <Feedback />
-//     </div>
-//   );
-// };
